@@ -10,8 +10,7 @@ source:
     sha256: fcee758612edc6fead9b8fd1d5a473eab2c3a84cf8766f3ce70862ccd35e8a64
 
 build:
-    number: 0
-    skip: True  # [win]
+    number: 1
     script: python setup.py install --single-version-externally-managed --record record.txt
     entry_points:
         - humanfriendly = humanfriendly.cli:main
@@ -30,6 +29,8 @@ test:
         - humanfriendly --help  # [not osx]
     requires:
         - capturer >=2.1  # [not win]
+        # Circular dependency on coloredlogs. Once we have that on Windows we
+        # can uncomment this here.
         #- coloredlogs >=2.0
 
 about:
