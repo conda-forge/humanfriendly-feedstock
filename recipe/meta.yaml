@@ -1,16 +1,16 @@
-{% set version = "1.44.7" %}
+{% set version = "4.4" %}
 
 package:
     name: humanfriendly
     version: {{ version }}
 
 source:
-    fn: humanfriendly-1.44.7.tar.gz
+    fn: humanfriendly-{{ version }}.tar.gz
     url: https://pypi.io/packages/source/h/humanfriendly/humanfriendly-{{ version }}.tar.gz
-    sha256: fcee758612edc6fead9b8fd1d5a473eab2c3a84cf8766f3ce70862ccd35e8a64
+    sha256: 2e1d9a4162a75156e588ed8dddb3b84fb8b99aa39c522bf1c97d2cfd721c42e5
 
 build:
-    number: 2
+    number: 0
     script: python setup.py install --single-version-externally-managed --record record.txt
     entry_points:
         - humanfriendly = humanfriendly.cli:main
@@ -27,9 +27,6 @@ test:
         - humanfriendly
     commands:
         - humanfriendly --help  # [not osx]
-    requires:
-        - capturer >=2.1  # [not win]
-        - coloredlogs >=2.0
 
 about:
     home: https://humanfriendly.readthedocs.org
