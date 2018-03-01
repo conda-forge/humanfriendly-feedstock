@@ -1,38 +1,35 @@
 {% set version = "4.8" %}
 
 package:
-    name: humanfriendly
-    version: {{ version }}
+  name: humanfriendly
+  version: {{ version }}
 
 source:
-    fn: humanfriendly-{{ version }}.tar.gz
-    url: https://pypi.io/packages/source/h/humanfriendly/humanfriendly-{{ version }}.tar.gz
-    sha256: d0e74171b87318a94b99520e4f0c5651e944b5f11d696c46be3330bb82b85300
+  url: https://pypi.io/packages/source/h/humanfriendly/humanfriendly-{{ version }}.tar.gz
+  sha256: d0e74171b87318a94b99520e4f0c5651e944b5f11d696c46be3330bb82b85300
 
 build:
-    number: 0
-    script: python setup.py install --single-version-externally-managed --record record.txt
-    entry_points:
-        - humanfriendly = humanfriendly.cli:main
+  number: 0
+  script: python -m pip install --no-deps --ignore-installed .
+  entry_points:
+    - humanfriendly = humanfriendly.cli:main
 
 requirements:
-    build:
-        - python
-        - setuptools
-    run:
-        - python
+  build:
+    - python
+    - pip
+  run:
+    - python
 
 test:
-    imports:
-        - humanfriendly
-    commands:
-        - humanfriendly --help  # [not osx]
+  imports:
+    - humanfriendly
 
 about:
-    home: https://humanfriendly.readthedocs.org
-    license: MIT
-    summary: 'Human friendly output for text interfaces using Python.'
+  home: https://humanfriendly.readthedocs.org
+  license: MIT
+  summary: 'Human friendly output for text interfaces using Python.'
 
 extra:
-    recipe-maintainers:
-        - ocefpaf
+  recipe-maintainers:
+    - ocefpaf
