@@ -14,12 +14,15 @@ Summary: Human friendly output for text interfaces using Python.
 Current build status
 ====================
 
-All platforms: [![Circle CI](https://circleci.com/gh/conda-forge/humanfriendly-feedstock.svg?style=shield)](https://circleci.com/gh/conda-forge/humanfriendly-feedstock)
+All platforms:
+[![noarch](https://img.shields.io/circleci/project/github/conda-forge/humanfriendly-feedstock/master.svg?label=noarch)](https://circleci.com/gh/conda-forge/humanfriendly-feedstock)
 
 Current release info
 ====================
-Version: [![Anaconda-Server Badge](https://anaconda.org/conda-forge/humanfriendly/badges/version.svg)](https://anaconda.org/conda-forge/humanfriendly)
-Downloads: [![Anaconda-Server Badge](https://anaconda.org/conda-forge/humanfriendly/badges/downloads.svg)](https://anaconda.org/conda-forge/humanfriendly)
+
+| Name | Downloads | Version | Platforms |
+| --- | --- | --- | --- |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-humanfriendly-green.svg)](https://anaconda.org/conda-forge/humanfriendly) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/humanfriendly.svg)](https://anaconda.org/conda-forge/humanfriendly) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/humanfriendly.svg)](https://anaconda.org/conda-forge/humanfriendly) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/humanfriendly.svg)](https://anaconda.org/conda-forge/humanfriendly) |
 
 Installing humanfriendly
 ========================
