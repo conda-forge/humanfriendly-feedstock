@@ -9,7 +9,6 @@ source:
   sha256: 1d3a1c157602801c62dfdb321760229df2e0d4f14412a0f41b13ad3f930a936a
 
 build:
-  noarch: python
   number: 0
   script: python -m pip install --no-deps --ignore-installed .
   entry_points:
@@ -21,6 +20,7 @@ requirements:
     - pip
   run:
     - python
+    - pyreadline  # [win]
 
 test:
   imports:
@@ -34,3 +34,4 @@ about:
 extra:
   recipe-maintainers:
     - ocefpaf
+    - ccordoba12
