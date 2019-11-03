@@ -29,6 +29,7 @@ test:
 about:
   home: https://humanfriendly.readthedocs.org
   license: MIT
+  license_file: LICENSE.txt
   summary: 'Human friendly output for text interfaces using Python.'
 
 extra:
