@@ -9,22 +9,27 @@ source:
   sha256: 33ee8ceb63f1db61cce8b5c800c531e1a61023ac5488ccde2ba574a85be00a85
 
 build:
-  number: 0
+  number: 1
   script: python -m pip install --no-deps --ignore-installed .
   entry_points:
     - humanfriendly = humanfriendly.cli:main
 
 requirements:
-  build:
+  host:
     - python
     - pip
   run:
     - python
     - pyreadline  # [win]
+    - monotonic  # [py2k]
 
 test:
   imports:
     - humanfriendly
+  requires:
+    - pip
+  commands:
+    - pip check
 
 about:
   home: https://humanfriendly.readthedocs.org
