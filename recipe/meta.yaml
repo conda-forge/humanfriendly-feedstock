@@ -1,4 +1,4 @@
-{% set version = "4.18" %}
+{% set version = "5.0" %}
 
 package:
   name: humanfriendly
@@ -6,11 +6,11 @@ package:
 
 source:
   url: https://pypi.io/packages/source/h/humanfriendly/humanfriendly-{{ version }}.tar.gz
-  sha256: 33ee8ceb63f1db61cce8b5c800c531e1a61023ac5488ccde2ba574a85be00a85
+  sha256: b166d90b0fd2e7deafc5d20f64ddfdd4251189a1a6bdc5ed32c6678c79b546d5
 
 build:
-  number: 1
-  script: python -m pip install --no-deps --ignore-installed .
+  number: 0
+  script: {{ PYTHON }} -m pip install . --no-deps -vv
   entry_points:
     - humanfriendly = humanfriendly.cli:main
 
