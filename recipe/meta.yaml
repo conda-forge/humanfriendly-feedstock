@@ -1,4 +1,4 @@
-{% set version = "6.0" %}
+{% set version = "6.1" %}
 
 package:
   name: humanfriendly
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/h/humanfriendly/humanfriendly-{{ version }}.tar.gz
-  sha256: c2c4b442e8bb8b92b45b36b10e403765093d9178a112291686b37f175f2fe19d
+  sha256: b77d1aa8d73b6fe7e8860fa516fbc0e2aa85bff159d7525b0213353817cf1cfc
 
 build:
   number: 0
