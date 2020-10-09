@@ -9,7 +9,7 @@ source:
   sha256: bf52ec91244819c780341a3438d5d7b09f431d3f113a475147ac9b7b167a3d12
 
 build:
-  number: 0
+  number: 1
   script: {{ PYTHON }} -m pip install . --no-deps -vv
   entry_points:
     - humanfriendly = humanfriendly.cli:main
