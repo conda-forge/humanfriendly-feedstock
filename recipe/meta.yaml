@@ -10,7 +10,7 @@ source:
 
 build:
   number: 0
-  script: {{ PYTHON }} -m pip install . --no-deps -vv
+  script: {{ PYTHON }} -m pip install . -vv
   entry_points:
     - humanfriendly = humanfriendly.cli:main
 
@@ -20,8 +20,8 @@ requirements:
     - pip
   run:
     - python
-    - pyreadline  # [win]
-    - monotonic  # [py2k]
+    - pyreadline  # [win and py<38]
+    - pyreadline3  # [win and py>=38]
 
 test:
   imports:
