@@ -1,5 +1,5 @@
 bot:
-  automerge: true
+  inspection: update-grayskull
 build_platform:
   linux_aarch64: linux_64
   linux_ppc64le: linux_64
@@ -14,3 +14,6 @@ provider:
   linux_aarch64: default
   linux_ppc64le: default
 test_on_native_only: true
+noarch_platforms:
+- linux_64
+- win_64

@@ -9,23 +9,21 @@ source:
   sha256: 6b0b831ce8f15f7300721aa49829fc4e83921a9a301cc7f606be6686a2288ddc
 
 build:
-  number: 5
+  number: 6
+  noarch: python
   script: {{ PYTHON }} -m pip install . -vv
   entry_points:
     - humanfriendly = humanfriendly.cli:main
 
 requirements:
-  build:
-    - python                                 # [build_platform != target_platform]
-    - cross-python_{{ target_platform }}     # [build_platform != target_platform]
-    - python                                 # [build_platform != target_platform]
-    - cross-python_{{ target_platform }}     # [build_platform != target_platform]
   host:
-    - python
+    - python >=3.8
     - pip
   run:
-    - python
-    - pyreadline3  # [win and py>=38]
+    - python >=3.8
+    - pyreadline3  # [win]
+    - __unix  # [unix]
+    - __win   # [win]
 
 test:
   imports:
