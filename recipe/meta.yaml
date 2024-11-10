@@ -5,11 +5,11 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/h/humanfriendly/humanfriendly-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/h/humanfriendly/humanfriendly-{{ version }}.tar.gz
   sha256: 6b0b831ce8f15f7300721aa49829fc4e83921a9a301cc7f606be6686a2288ddc
 
 build:
-  number: 6
+  number: 7
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
   entry_points:
@@ -17,10 +17,11 @@ build:
 
 requirements:
   host:
-    - python >=3.8
+    - python {{ python_min }}
     - pip
+    - setuptools
   run:
-    - python >=3.8
+    - python >={{ python_min }}
     - pyreadline3  # [win]
     - __unix  # [unix]
     - __win   # [win]
@@ -30,6 +31,10 @@ test:
     - humanfriendly
   requires:
     - pip
+    # Test with old on unix
+    - python {{ python_min }}  # [unix]
+    # Test with hyper modern on windows
+    - python 3.13              # [win]
   commands:
     - pip check
 
